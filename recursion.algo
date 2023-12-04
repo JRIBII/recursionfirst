@@ -1,0 +1,22 @@
+ALGORITHM palindrome
+VAR
+    mot :STRING;
+    i :INTEGER;
+    b:BOOLEAN;
+BEGIN
+    b:=TRUE;
+    i:=1;
+    WRITE("Entrez un mot : ");
+    READ(mot);
+    WHILE (i<=LENGTH(mot)/2) AND (b=TRUE) DO
+        IF mot[i]<>mot[LENGTH(mot)-i+1] THEN
+            b:=FALSE;
+        ENDIF
+        i:=i+1;
+    ENDWHILE
+    IF b=TRUE THEN
+        WRITE("Le mot est un palindrome");
+    ELSE
+        WRITE("Le mot n'est pas un palindrome");
+    ENDIF
+END
